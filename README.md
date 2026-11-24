@@ -1,8 +1,8 @@
 # Proofpecker · 证据啄木鸟
 
-**AI says the test passed. Would the test have caught the bug?**
+**If the code were wrong, would this test still pass?**
 
-Proofpecker gives independent reviewers the claim, the code, and the evidence together. One reviewer checks the design, one traces the implementation, and one asks what the test actually proves. Choose the roles and models your change needs.
+Proofpecker gives AI reviewers three jobs. One checks the design, one traces the implementation, and one asks what the tests actually prove. Use the same model for all three or choose one for each role. Every finding keeps the version of the evidence its reviewer saw, so you can revisit it after a fix.
 
 [中文使用指南](README.zh-CN.md) · [Download the CLI or skill](https://github.com/vince-ni/proofpecker/releases/latest) · [Read the example capture](skills/proofpecker/scripts/pecker_example/capture.txt)
 
@@ -70,7 +70,7 @@ Run `proofpecker models` to see local configuration. It checks settings without 
 | `ollama` | Local Chat Completions on port 11434 | none |
 | `compatible` | Custom Chat Completions endpoint, including local LM Studio | `PROOFPECKER_COMPATIBLE_URL`, optional `PROOFPECKER_API_KEY` |
 
-Regional endpoints and available model IDs depend on your account. For a China or international workspace set the corresponding preset URL to match your key. Offline contract tests exercise request shapes, response parsing, failure handling and mixed routing. See the [release notes](https://github.com/vince-ni/proofpecker/releases/tag/v0.1.0) for live verification.
+Regional endpoints and available model IDs depend on your account. For a China or international workspace set the corresponding preset URL to match your key. Offline contract tests exercise request shapes, response parsing, failure handling and mixed routing. Read the [verification results](VERIFICATION.md) for the live model run and its missed finding.
 
 ## Inspect and follow up
 

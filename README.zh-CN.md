@@ -1,8 +1,8 @@
 # Proofpecker · 证据啄木鸟
 
-**AI 说测试通过了。如果代码真的写错，这个测试抓得到吗？**
+**如果代码写错了，这个测试还会通过吗？**
 
-Proofpecker 让设计、实现、证据三个角色独立审查。设计角色问目标是否合理，实现角色沿源码查实际行为，证据角色问测试能证明什么。每个角色都能看到同一条主张相关的源码、测试和日志。你可以只启用需要的角色，也可以让不同模型分别承担。
+Proofpecker 让 AI 分头审设计、读实现、查证据。你可以让三个角色用同一个模型，也可以各选一个。每条发现都保留对应版本的材料，改完代码还能回到原问题复核。
 
 ## 一条命令体验
 
@@ -51,7 +51,7 @@ proofpecker review --example --language 中文 --roles design,implementation,evi
 | Ollama 本机模型 | 默认使用本机 11434 端口 |
 | 其他 Chat Completions 兼容服务 | `PROOFPECKER_COMPATIBLE_URL`，需要时加 `PROOFPECKER_API_KEY` |
 
-`proofpecker models` 打印各入口的配置状态。国内外账户按实际地域设置 `PROOFPECKER_QWEN_URL`、`PROOFPECKER_KIMI_URL` 等。每次运行记录请求的模型和服务端实际返回的型号，未提供的值保留为空。按角色分别发起请求，所选材料会发送给对应服务。接口测试与真实模型调用的验证范围见发行说明。
+`proofpecker models` 打印各入口的配置状态。国内外账户按实际地域设置 `PROOFPECKER_QWEN_URL`、`PROOFPECKER_KIMI_URL` 等。每次运行记录请求的模型和服务端实际返回的型号，未提供的值保留为空。按角色分别发起请求，所选材料会发送给对应服务。首次真实试跑中，Qwen3 完成了三个角色，但漏掉了示例中的证据缺口。[查看验证记录](VERIFICATION.md)
 
 ## 审自己的项目
 
