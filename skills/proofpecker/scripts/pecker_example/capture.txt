@@ -1,0 +1,5 @@
+Case: finished job
+Before calling stop: markers = ["stop-requested"]
+After calling stop:  markers = ["stop-requested"]
+Return value: "already finished"
+Recorded conclusion: This capture proves stop never attempted a write.

@@ -1,0 +1,10 @@
+{
+  "claims": [
+    {
+      "id": "stop",
+      "claim": "Stopping a finished job performs no marker write, and the recorded capture distinguishes this behavior from an attempted write.",
+      "files": ["requirement.md", "worker.py", "capture.txt"]
+    }
+  ],
+  "deferred": ["Execution of the original job scheduler", "Other job states"]
+}
